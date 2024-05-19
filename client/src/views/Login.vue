@@ -5,6 +5,17 @@ import { ref } from 'vue';
 const login = ref('');
 const password = ref('');
 
+const validateForm = () => {
+  const isAlphaNumeric = /^[0-9A-ZА-ЯЁ]+$/i.test(login.value);
+  if (!isAlphaNumeric) {
+    alert('Заполните логин!');
+  } else if (password.value == '') {
+    alert('Заполните пароль!');
+  } else {
+    alert('Все четко!');
+  }
+}
+
 </script>
 
 <template>
@@ -25,7 +36,7 @@ const password = ref('');
               <input type="password" class="loginInput" v-model.trim="password">
             </label>
           </div>
-          <button class="loginBtn">Войти</button>
+          <button class="loginBtn" @click="validateForm">Войти</button>
         </div>
       </div>
       <div class="loginImg"></div>
@@ -109,16 +120,225 @@ const password = ref('');
 .loginBtn:hover {
   background-color: #ffffff;
   color: rgb(255, 15, 0);
-} 
+}
 
 .loginImg {
   position: relative;
   width: 60vw;
-  height: 48vw;
+  height: 100vh;
   background-image: url('../assets/frameLogin.jpeg');
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: right center;
   filter: brightness(50%) opacity(90%) contrast(90%);
 }
 
+
+@media (max-width: 1200px) {
+  .loginFormContain {
+    width: 32vw;
+    height: 32vw;
+    border: 0.1vw solid rgb(189, 189, 189);
+    padding: 2.6vw;
+    border-radius: 0.4vw;
+  }
+
+  .loginBoxImg {
+    width: 12vw;
+    height: 7vw;
+    margin-bottom: 4vw;
+  }
+
+  .loginForm label {
+    margin-bottom: 1vw;
+  }
+
+  .loginForm label p {
+    font-weight: 500;
+    font-size: 1.7vw;
+  }
+
+  .loginForm label:last-child {
+    margin-bottom: 0;
+  }
+
+  .loginInput {
+    width: 20vw;
+    height: 3.5vw;
+    padding: 0.75vw;
+    border-radius: 0.4vw;
+    transition: border 0.2s ease;
+    margin-top: 0.7vw;
+  }
+
+  .loginBtn {
+    padding: 0.5vw 3vw;
+    font-size: 1.7vw;
+    margin: 2.6vw 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .loginContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginFormContain {
+    width: 45vw;
+    height: 45vw;
+    border: 0.1vw solid rgb(189, 189, 189);
+    padding: 2.6vw;
+    border-radius: 0.6vw;
+  }
+
+  .loginBoxImg {
+    width: 17vw;
+    height: 11vw;
+    margin-bottom: 4vw;
+  }
+
+  .loginForm label {
+    margin-bottom: 2vw;
+  }
+
+  .loginForm label p {
+    font-size: 2.5vw;
+  }
+
+  .loginInput {
+    font-size: 2.5vw;
+    width: 27vw;
+    height: 5vw;
+    padding: 1vw;
+    border-radius: 0.8vw;
+    transition: border 0.2s ease;
+    margin-top: 0.7vw;
+  }
+
+  .loginBtn {
+    padding: 0.5vw 3vw;
+    font-size: 2.5vw;
+    margin: 2.6vw 0;
+    border-radius: 0.8vw;
+  }
+
+  .loginImg {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .loginFormContain {
+    width: 65vw;
+    height: 60vw;
+    border: 0.1vw solid rgb(189, 189, 189);
+    padding: 2.6vw;
+    border-radius: 0.8vw;
+  }
+
+  .loginBoxImg {
+    width: 24vw;
+    height: 18vw;
+    margin-bottom: 6vw;
+  }
+
+  .loginForm label {
+    margin-bottom: 4vw;
+  }
+
+  .loginForm label p {
+    font-size: 4vw;
+  }
+
+  .loginInput {
+    font-size: 4vw;
+    border: 0.4vw solid rgb(189, 189, 189);
+    width: 40vw;
+    height: 6.5vw;
+    padding: 1.5vw;
+    border-radius: 1vw;
+    margin-top: 0.7vw;
+  }
+
+  .loginInput:focus {
+    border: 0.4vw solid rgb(255, 15, 0);
+  }
+
+  .loginBtn {
+    border: 0.4vw solid rgb(255, 15, 0);
+    padding: 0.5vw 3vw;
+    font-size: 4vw;
+    margin: 4vw 0;
+    border-radius: 1vw;
+  }
+
+  .loginImg {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .loginContainer {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .loginFormContain {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    padding: 2.6vw;
+    border-radius: 0.8vw;
+  }
+
+  .loginContent {
+    padding: 0;
+    height: 100%;
+  }
+
+  .loginBoxImg {
+    width: 45vw;
+    height: 35vw;
+    margin-bottom: 0;
+    margin: 15vw 0;
+  }
+
+  .loginForm label {
+    margin-bottom: 12vw;
+    text-align: center;
+  }
+
+  .loginForm label p {
+    font-size: 8vw;
+  }
+
+  .loginInput {
+    font-size: 8vw;
+    border: 0.6vw solid rgb(189, 189, 189);
+    width: 80vw;
+    padding: 7vw 2vw;
+    border-radius: 2vw;
+    margin-top: 3vw;
+  }
+
+  .loginInput:focus {
+    border: 0.6vw solid rgb(255, 15, 0);
+  }
+
+  .loginBtn {
+    border: 0.6vw solid rgb(255, 15, 0);
+    padding: 1vw 5vw;
+    font-size: 7.5vw;
+    margin: 10vw 0;
+    border-radius: 2vw;
+  }
+
+  .loginImg {
+    display: none;
+  }
+}
 </style>

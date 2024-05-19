@@ -101,4 +101,101 @@ const auth = ref(true);
   fill-opacity: "1";
 }
 
+@media (max-width: 1000px) {
+  .header {
+    padding: 4vw 0;
+  }
+
+  .headerBoxImg {
+    width: 13vw;
+    height: 8vw;
+  }
+
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .headerUser {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerUserName {
+    font-size: 1.75vw;
+    font-weight: 500;
+    margin-right: 4vw;
+  }
+
+  .headerBtnExit {
+    border: 0.2vw solid rgb(255, 15, 0);
+    padding: 1vw;
+    border-radius: 0.5vw;
+  }
+
+  .headerBtnExit svg {
+    width: 3vw;
+    height: 3vw;
+  }
+}
+
+
+@media (max-width: 720px) {
+  .header {
+    padding: 4vw 0;
+  }
+
+  .headerBoxImg {
+    width: 17vw;
+    height: 12vw;
+  }
+
+  .headerUserName {
+    font-size: 3vw;
+    font-weight: 500;
+    margin-right: 5vw;
+  }
+
+  .headerBtnExit {
+    border: 0.2vw solid rgb(255, 15, 0);
+    padding: 1vw;
+    border-radius: 0.5vw;
+  }
+
+  .headerBtnExit svg {
+    width: 4vw;
+    height: 4vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .headerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headerBoxImg {
+    width: 27vw;
+    height: 22vw;
+  }
+
+  .headerUserName {
+    font-size: 7vw;
+    font-weight: 500;
+    margin-right: 6vw;
+  }
+
+  .headerBtnExit {
+    border: 0.4vw solid rgb(255, 15, 0);
+    padding: 1.6vw;
+    border-radius: 1.2vw;
+  }
+
+  .headerBtnExit svg {
+    width: 6vw;
+    height: 6vw;
+  }
+
+}
 </style>

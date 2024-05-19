@@ -233,7 +233,7 @@ import downloadSVG from '../assets/download.svg'
   }
 
   .articleViolationList {
-    height: 44.66vw;
+    height: 62.66vw;
   }
 
   .articleViolationList::-webkit-scrollbar {
@@ -241,7 +241,7 @@ import downloadSVG from '../assets/download.svg'
   }
 
   .articleViolationItem {
-    border: 0.5vw solid rgb(128, 128, 128);
+    border: 0.6vw solid rgb(128, 128, 128);
     border-radius: 1.4vw;
     margin-bottom: 3vw;
     margin-right: 1.5vw;
@@ -262,7 +262,7 @@ import downloadSVG from '../assets/download.svg'
 
 @media (max-width: 680px) {
   .articleViolationList {
-    height: 57.66vw;
+    height: 82.66vw;
   }
 }
 
@@ -275,24 +275,24 @@ import downloadSVG from '../assets/download.svg'
     padding-right: 4vw;
     display: flex;
     flex-direction: column;
-    font-size: 3.25vw;
+    font-size: 5vw;
   }
 
   .articleAbout {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 4.5vw;
+    margin-bottom: 6.5vw;
   }
 
   .articleTitle {
-    font-size: 3.7vw;
+    font-size: 5.7vw;
   }
 
   .articleLink {
-    width: 6.5vw;
-    height: 6.5vw;
-    border-radius: 0.4vw;
+    width: 8.5vw;
+    height: 8.5vw;
+    border-radius: 1.2vw;
     background: rgb(255, 15, 0);
   }
 
@@ -306,13 +306,13 @@ import downloadSVG from '../assets/download.svg'
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 5.25vw;
+    margin-bottom: 7.25vw;
   }
 
   .articleViolation {
     display: flex;
     align-items: center;
-    margin-bottom: 5.25vw;
+    margin-bottom: 7.25vw;
   }
 
   .articleViolation p:last-child {
@@ -322,7 +322,7 @@ import downloadSVG from '../assets/download.svg'
 
   .articleViolationList {
     padding: 0 5vw;
-    height: 58vh;
+    height: 56vh;
   }
 
   .articleViolationList::-webkit-scrollbar {
@@ -345,6 +345,18 @@ import downloadSVG from '../assets/download.svg'
 
   .articleViolationText {
     padding: 3vw;
+  }
+}
+
+@media (max-width: 420px) {
+  .articleViolationList {
+    height: 63vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .articleViolationList {
+    height: 67.5vh;
   }
 }
 </style>

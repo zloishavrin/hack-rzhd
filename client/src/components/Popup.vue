@@ -111,8 +111,8 @@ watchEffect(() => {
   }
 
   .popup-close {
-    width: 8vw;
-    height: 8vw;
+    width: 10vw;
+    height: 10vw;
   }
 }
 </style>
