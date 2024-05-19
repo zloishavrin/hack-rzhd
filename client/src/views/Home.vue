@@ -1,10 +1,15 @@
 <script setup>
 import Header from '@/components/Header.vue';
 import ArticleList from '@/components/ArticleList.vue';
-import { ref, onUnmounted } from 'vue';
+import { ref, onUnmounted, watch, reactive, onMounted } from 'vue';
+import debounce from 'lodash.debounce';
+import { useAuth } from '@/stores/AuthStore';
+import { articleService } from '@/service/articleService';
 
 const articleSearch = ref('');
 const articleDate = ref('');
+const articleList = reactive([]);
+const error = ref('');
 
 const clearSearchInput = () => {
   articleSearch.value = '';
@@ -14,8 +19,31 @@ const clearDateInput = () => {
   articleDate.value = '';
 }
 
-onUnmounted(clearDateInput);
+async function fetchArticle() {
+  try{
+    const data = await articleService.getArticle({ search: articleSearch.value });
+    articleList.value = data;
+  } catch (e){
+    error.value = e.message;
+    console.log(e.message);
+  }
+}
 
+async function fetchArticles() {
+  try{
+    const data = await articleService.getArticles();
+    articleList.value = data;
+  } catch (e){
+    error.value = e.message;
+    console.log(e.message);
+  }
+}
+
+onMounted(fetchArticles);
+
+watch(articleSearch, debounce(fetchArticle, 1000))
+
+onUnmounted(clearDateInput);
 </script>
 
 <template>
@@ -24,11 +52,8 @@ onUnmounted(clearDateInput);
     <div class="articleSearch">
       <input type="text" v-model.trim="articleSearch" class="articleInputSearch" placeholder="Поиск"
         @blur="clearSearchInput" />
-      <div class="dateBox">
-        <input type="date" v-model.trim="articleDate" class="articleInputDate">
-      </div>
     </div>
-    <ArticleList />
+    <ArticleList :articleList="articleList"/>
   </div>
 </template>
 

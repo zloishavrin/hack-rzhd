@@ -1,18 +1,22 @@
-import $host from "./api";
+import { $authHost } from "./api";
 
-export class authService {
-  static async getArticle(search, date) {
-    const { data } = await $host.get(`/content`, {
+export class articleService {
+  static async getArticle(search) {
+    const { data } = await $authHost.get(`/Article/content`, {
       params: {
-        search,
-        date
+        search
       },
     });
     return data;
   }
 
+  static async getArticles() {
+    const { data } = await $authHost.get(`/Article/articles`);
+    return data;
+  }
+
   static async getArticleById(search, date) {
-    const { data } = await $host.get(`/article`, {
+    const { data } = await $authHost.get(`/Article/article`, {
       params: {
         search,
         date

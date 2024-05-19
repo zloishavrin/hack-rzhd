@@ -1,8 +1,10 @@
 <script setup>
 import logoSVG from '../assets/logo.svg'
 import { ref } from 'vue';
+import { useAuth } from '@/stores/AuthStore';
 
-const auth = ref(true);
+const auth = useAuth();
+
 </script>
 
 <template>
@@ -12,8 +14,8 @@ const auth = ref(true);
         <img :src="logoSVG" alt="logo">
       </div>
       <div class="headerUser">
-        <p class="headerUserName">User</p>
-        <button class="headerBtnExit">
+        <p class="headerUserName">{{ auth.user }}</p>
+        <button class="headerBtnExit" @click="auth.logout">
           <svg width="47.000000" height="47.000000" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>

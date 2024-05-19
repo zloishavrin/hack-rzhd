@@ -1,9 +1,24 @@
 <script setup>
 import logoSVG from '../assets/logo.svg'
 import { ref } from 'vue';
+import { useAuth } from '@/stores/AuthStore';
 
 const login = ref('');
 const password = ref('');
+
+const auth = useAuth();
+
+const sumbitForm = async () => {
+  try {
+    await auth.login({ login: login.value, password: password.value });
+    if (auth.errorLogin.length === 0) {
+      router.push({ name: 'home' });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 const validateForm = () => {
   const isAlphaNumeric = /^[0-9A-ZА-ЯЁ]+$/i.test(login.value);
@@ -12,7 +27,7 @@ const validateForm = () => {
   } else if (password.value == '') {
     alert('Заполните пароль!');
   } else {
-    alert('Все четко!');
+    sumbitForm();
   }
 }
 

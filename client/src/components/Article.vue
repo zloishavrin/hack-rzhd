@@ -20,59 +20,9 @@ import downloadSVG from '../assets/download.svg'
     </div>
     <div class="articleViolation">
       <p>Нарушения</p>
-      <p>23</p>
+      <p>0</p>
     </div>
     <ul class="articleViolationList">
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Аеае</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
-      <li class="articleViolationItem">
-        <p class="articleViolationNumber">Пункт 2</p>
-        <p class="articleViolationText">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные
-          тексты.</p>
-      </li>
     </ul>
   </div>
 </template>

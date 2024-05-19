@@ -3,9 +3,8 @@ import { authService } from "@/service/authService";
 
 export const useAuth = defineStore("auth", {
   state: () => ({
-    errorReg: "",
     errorLogin: "",
-    isAuth: true,
+    isAuth: false,
     isLoading: true,
     user: {},
   }),
@@ -14,7 +13,8 @@ export const useAuth = defineStore("auth", {
     async login({ login, password }) {
       try {
         const data = await authService.login(login, password);
-        this.user = data;
+        console.log(data);
+        this.user = data.sub;
         this.isAuth = true;
         this.errorLogin = "";
       } catch (e) {
@@ -25,8 +25,7 @@ export const useAuth = defineStore("auth", {
     },
 
     async logout() {
-      const token = localStorage.getItem("token");
-      await authService.logout(token);
+      localStorage.removeItem("token");
       this.user = {};
       this.isAuth = false;
       this.errorLogin = "";
